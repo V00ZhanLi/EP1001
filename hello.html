@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Electronics Design</h1>
+        </div>
+        <div id="contents">
+            <div id="nav">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a class="selected"href="index.html">home</a>
+                    </li>
+                    <li><a href="progress.html">progress</a></li>
+                    <li><a href="finalproject.html">final project</a></li>
+                    <li><a href="fablab safety.html">fablab safety</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="contact.html">contacts</a></li>
+                </ul>
+</div>
+            
+<div id="main">
+    <h2>Attiny85 hello board</h2>
+<p>In this assignment, we will be making our own Attiny hello board to program and play around.</p>
+
+    
+<p>First we are going to download the library for fablab in EAGLES, there are some components that we use in fablab that are in a specific size.</p>
+    
+<p>First we go to .</p>
+    
+<p>The finished PCB should look like this:</p>
+    <img src="images/ISP.png" width = "450" />
+    
+<p>After the PCB is cut and removed, you will need to sand the burs down with a 240 grit sandpaper, then polish it with a 800 grit sandpaper.</p>
+    
+<p>Once the traces are sanded flat and smooth, you can use a penknife to scrape the excess copper off, it is most important to strip the front piece of copper in between the second and third pads, or else it will short it out and cause your USB port to spoil.</p>
+    <img src="images/ispstripped.png" width = "450" />
+    
+<p>Now we can collect the components and start soldering, for the components  you will need:</p>
+    <ul>
+        <li>1x Attiny85 IC</li>
+        <li>2x 1kΩ resistors</li>
+        <li>2x 499Ω resistors</li>
+        <li>2x 49Ω resistors</li>
+        <li>2x 3.3v zener diodes</li>
+        <li>1x red LED</li>
+        <li>1x green LED</li>
+        <li>1x 100nf capacitor</li>
+        <li>1x 2x3 pin header</li>
+    </ul>
+    
+<p>The LEDs are optional, the red LED will turn on when there is a power supply and the green LED will on when it is talking to a target board.</p>
+    
+<p>Bottom shown now is the schemetic and layout of the components, a tip to be ablwe to solder effectively is to first solder the smaller components first such as the IC, resistors, zener diodes and LED, then solder the bigger ones like the header.</p>
+    <img src="images/ispschematic.png" width = "450" />
+    
+<p>The zener diodes have polarities and in the board layout, there is a line on it, that is ther zener diode's cathode. On ther component itself, the cathode is labelled the same way, so when soldering it is something to take note.</p>
+<p>The Attiny IC has also the same style of marking to take note, on the IC, there is a dot to show its first pin, do the same thing and take note of it when soldering.</p>
+<p>On the back of the LED, there is the way to see the polarity. using that mark, you can know how to position the LED so it will not be in reverse.</p>
+    
+<p>One important thing to take note is to connect the jumper(J1) together, so this way it will not be an open circuit.</p>
+    <img src="images/jumper.png" width = "450" />
+
+<h3>Improving the USB connection</h3>
+    <p>As the board is too thin to ensure a proper connection for its USB connector, there are some improvements that you can make with it. </p>
+    <ol>
+        <li>You can add some solder on the connecrtion pads to help elevate it higher, do take note to not add too much on one side or else it will be uneven, where one side can connect while the other is open.</li>
+        <li>You can also add a piece of scrap plastic or similar on the bottom to help as well, I use a piece of card on the bottom and glued it with superglue.</li>
+    </ol>
+    
+<p>Now we need to instal some software and we are almost done. There are many ways to instal the software depending on which device you are using, we will be using windows, so all these steps is for Windows devices.</p>
+    
+<h3>Steps for installing software</h3>
+<p>First we need to install git for windows, the download link will be here: <a href="https://git-scm.com/download/win">Git for Windows</a></p>
+<p>Now we install GNU make and launch the installer, just accept it's default locations: <a href="make-3.81.exe">Gnu Make</a></p>
+<p>Now we install avrdude, unzip the file and save it in program files: <a href="avrdude-win-64bit.zip">avrdude</a></p>
+<p>Finally, install the toolchain for Windows, then extract the files and save it in program files: <a href="https://blog.zakkemble.net/avr-gcc-builds/">AVR-GCC 10.1.0 for Windows 32 and 64 bit</a></p>
+<p>Now we go into environment variables, then enter into "PATH", then we need to add these 3 paths into it, the paths to add are:
+    </br>C:\Program Files\avrdude
+    </br>C:\Program Files\avr-gcc-10.1.0-x64-windows\bin
+    </br>C:\Program Files (x86)\GnuWin32\bin</p>
+    
+<p>Now we need to install a driver, we will use zadig</p>    
+    
+<p>The next step is to download the <a href="fts_firmware_bdm_v1.zip">firmware source code</a>, extract the file and open the makefile using brackets.</p>
+    
+<p>We will need to change the programmer inside it, since we are using the Attiny85, we will need to change the programmer from '45' to '85'.</p>
+    <img src="images/4to8.png" width = "450" />
+    
+<p>Now we open command prompt and cd into the file, then type in 'make' to gemerate files, it will first generate a .elf file, then do the make command again and it will generate .hex file, the hex file is the most important as it is the one that can do the other commands.</p>
+    <img src="images/make.png" width = "600" />
+    
+
+<p>Next command to type in is 'make flash', you will then see the progress bar and the LEDs flash.</p>
+    <img src="images/makeflash.png" width = "600" />
+    
+<p>Next command will be 'make fuses', you should see the progress bars and LED flash again.</p>
+    <img src="images/makefuses.png" width = "600" />
+    
+<p>Last command will be 'make rstdisbl', it will disable the reset fuse and turn the reset pin into a IO pin.</p>
+    <img src="images/rstdisbl.png" width = "600" />
+    
+<p>And finally, that is it! You have finished building the programmer and you are ready to use it to program other Attiny ICs.</p>
+    
+    
+     </div>
+</div>
+        
+<div id="footer">
+    Copyright &copy; 2020 voo zhan li
+        </div>
+    </body>
+</html>
