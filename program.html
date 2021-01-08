@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Electronics Design</h1>
+        </div>
+        <div id="contents">
+            <div id="nav">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a class="selected"href="index.html">home</a>
+                    </li>
+                    <li><a href="progress.html">progress</a></li>
+                    <li><a href="finalproject.html">final project</a></li>
+                    <li><a href="fablab safety.html">fablab safety</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="contact.html">contacts</a></li>
+                </ul>
+</div>
+            
+<div id="main">
+    <h2>Attiny85 hello board</h2>
+<p>In this assignment, we will be making our own Attiny hello board to program and play around.</p>
+
+    
+<p>First we are going to download the library for fablab in EAGLES, there are some components that we use in fablab that are in a specific size.</p>
+    
+ <p>First we go to https://gitlab.fabcloud.org/pub/libraries/electronics.</p>
+    
+<p>Now we click the eagles folder and download 'fab.lr'.</p>
+    
+<p>After downloading it, transfer the file into EAGLES library, to do it, go to documents->EAGLES->library and paste it there.</p>
+    
+<p>Now we can rename it so later in EAGLES find it easier, I renamed it to 00eagkefab.</p>
+    
+<p>Now we enter into EAGLES and we expand the library section, and we should be able to see the library, right click on it and make the to tick the use box, now that library id in use and we can start designing the board.</p>
+    
+<p>Now we click on create new project, then create new schematic.</p>
+    
+<p>now we enter into the schematic page, where we can start putting in the components, one thing to take note to make sure to FREQUENTLY SAVE YOUR PROGRESS, this is so you can always start from where you have stopped in case of any sudden disconnection from the software.</p>
+    
+<p>Now we can start designing, first we go to the add parts command, and search for our components.</p>
+    
+<P>Now we got the components, we can connect them together to complete the circuit, there are 2 ways you can connect the components. the first way is the traditional click and connect, the second is to name the create shortr wires and give them names, once you give them names, EAGLES will ask if you want toi connect the two together, and you can just click yes and finish.</P>
+    
+    <p>After connectiing components, naming and giving values for your resistors, capacitor, and LED, you can use the ERC function to check if you missed anything.</p>
+    
+<p>Now once it is connected, switch it from schematic to boaard, this will now give you the function to design the baord now. Now in board, we can arrange the components and deal with the rats nest you are going to get at first, it is important to ensure that there are as little intersections as possible, so later routing the traces will be easier.</p>
+    
+<p>Now you can go to DRC and adjust some values, they are shown below:</p>
+    
+<p>After setting the values, you can use DRC to check for any design flaws and when there isn't, you can start generating the gcode.</p>
+    
+<p>There are 2 ways to generate the gcode, the first way is using EAGLES to generate, the second is to save the design as PNG and use mods to generate. I am going to use mods to generate the code as it is a lot simpler and easier for me to do, but our lecturer has given us an advice, if we are using EAGLES to design, we should use EAGLES for everything.</p>
+    
+    
+     </div>
+</div>
+        
+<div id="footer">
+    Copyright &copy; 2020 voo zhan li
+        </div>
+    </body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Electronics Design</h1>
+        </div>
+        <div id="contents">
+            <div id="nav">
+                <h3>navigation</h3>
+                <ul>
+                    <li><a class="selected"href="index.html">home</a>
+                    </li>
+                    <li><a href="progress.html">progress</a></li>
+                    <li><a href="finalproject.html">final project</a></li>
+                    <li><a href="fablab safety.html">fablab safety</a></li>
+                    <li><a href="about.html">about</a></li>
+                    <li><a href="contact.html">contacts</a></li>
+                </ul>
+</div>
+            
+<div id="main">
+    <h2>Programming the boi</h2>
+<p>Now we have our own hello board, we can use it and the ISP as the programmer.</p>
+<p>The software we are going to be using will be arduino, it has support for it and it will be easier to use arduino instead of ome other software.</p>
+<p>First we need to go to a link, this link will give all the steps needed on installing the support for attiny boards.<a href="https://github.com/SpenceKonde/ATTinyCore" target="_blank">Spencer Konde attinycore</a></p>
+<p>After installation, we should be in arduino IDE, you can start to do a simple code, we can start with a blink command, just to understand how to program it.</p>
+<p>First we just open up the blink example circuit.</p>
+<p>Then we change the LEDBUILDIN to the pin number on our hello board, on our board, the pin where the LED is connected is number 4. If you have other pins, you can refer to this pinout diagram to know which number to put in.</p>
+    <img src="images/pinout.png" width = "600" />
+<p>After changing the pin number, the command should look like this:</p>
+    <img src="images/ledcode.png" width = "600" />
+<p>Then we can verify the code for any errors.</p>
+    <img src="images/verify.png" width = "600" />
+<p>Now we pay attention to the board we are going to upload to, below is the settings for the board we are going to connect.</p>
+    <img src="images/board.png" width = "600" />
+<p>Finally we are going to send the program over, since the ISP is not recognised by arduino as a board, we are going to need to send the program through another way. Go to "sketch" then under sketch, click on "upload using programmer" this will send the program to the ISP and then the hello board.</p>
+    <img src="images/upload.png" width = "300" />
+<p>After pressing it, it will show the progress bar of uploading the code and the green LED for the ISP will start to flash, after it stopped flashing, it means the code is uploaded.</p>
+<p>If all is done correctly, the hello board LED should start flashing.</p>
+    <p>video goes here</p>
+<p>Congrats! you learnt how to program your hello board.</p>
+    
+    
+     </div>
+</div>
+        
+<div id="footer">
+    Copyright &copy; 2020 voo zhan li
+        </div>
+    </body>
+</html>
