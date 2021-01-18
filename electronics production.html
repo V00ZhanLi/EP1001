@@ -48,7 +48,15 @@
         <li>etching is when the creator uses different chemicals and other methods such as lithography or transfers to create the traces of the PCB, this method is generally not used much as the methods are pretty complex and there can also be toxic waste after finishing, these methods could be done in a factory, but in our homes, nah.</li>
         <li>The second method is mahining, machining is when you use tools like a CNC cutter and specific cutting bits to mill and cut out the PCBs, of course this have their own cons too like sometimes the machine is very noisy and since it is milling, there will be dust buildup, but this is a prefered method as it is way simpler to execute and the items can be easily bought, as the items are just the machine, copper boards, and the assorted drill bits, compared to the first method where you have to buy chemicals or specific materials.</li>
     </ol>
-<p>To make this as simple as possible, we are going to be doing the machining method, since it is easier to understand and it is what we will be doing for this elective.</p>
+<p>If you do not wish to fabricate your own PCB, you can ask other companies to do it, just send them the designs and within a few days, the finished board will be shipped to you.</p>
+<ul>
+    <p>Companies that does this include:</p>
+    <li>JLCPCB</li>
+    <li>Seeed</li>
+    <li>PCBWay</li>
+    </ul>
+    
+<p>For this elective, we are going to be doing the machining method, so every PCB fabricated will be made in this way.</p>
     <h3>Tools to create PCB</h3>
     <p>Here are the tools to create PCBs, you will need:</p>
     <ul>
@@ -101,9 +109,67 @@
 <p>When everything is checked and ok to go, you can save it in a thumbdrive and we can go proceed to use the stepcraft software to cut.</p>
     
 <p>In the stepcraft software, you can use the many different functions in it, </p>
-<p>The left side is the controls for the machine, how fast it moves, and the directions.</p>
-<p></p>
+<img src="images/software.png" width = "590" />
+<p>On the black area, it is the bed of the CNC machine, and the little circle there is the spindal of the machine, you can control it with the laptop's keyboard, and use page up and down to bring it up and down.</p>
     
+<p>Now the steps on using the machine.</p>
+    
+<ol>
+    <li>Using a spanner, we are going to loosen the chuck for the bit and insert our 0.3 v bit and tighten it.</li>
+    <li>To upload files, click on load files and find it.</li>
+    <li>Now we need to test if the probe is working, go to dianostics and press on the button on top of the probe, when the probe signal turn from red to green, this shows that the probe is working.</li>
+    <li>After testing the probe, we can start to put the copper board onto the cutout of the wood, we first put some double sidede tape on the bottom to hold it on place better, if the copper board is still wobbly inside the cutout, then we can use masking tape on the sides to secure it.</li>
+    <li>Now we put the probe in the middle of the copper board and bring the drill above it, and press the button to set the Z-axis, after setting the Z-axis, bring the drill to the bottom left and zero the X and Y axis, this will be the circuit board's side.</li>
+    <li>Finally, push down the lever and it will start spinning, to stop it, push on it and it will lift it up, then on the software, click on cycle start and it will start milling the board.</li>
+    <li>After the traces are milled, change the drill bit to the 0.8 flat anvil bit and repeat all steps to upload files, set the Z-axis, and start to mill again, now we are milling the outline of the board.</li>
+</ol>
+<p>after cutting out the board, we inspect it to see if there are any burrs to clean up, if there is, we can use sandpaper to sand it down.</p>
+<p>After the board is cleaned up, we can start soldering.</p>
+    
+<h3>Types of components:</h3>
+    <p>There are 2 types of components used in electronic circuit boards, through hole technology(THT) and surface mount devices(SMD).</p>
+    <p>THT components are the most common types of components for PCBs, they are easy to solder and done by inserting the legs of the components through the holes and soldered at the opposite side of the component.</p>
+    
+    <img src="images/THT.png" width = "300" />
+    
+    <p>SMD components are another type of component used in PCBs, they are tiny little components that you solder their ends onto the pads on the surfae of the circuit board. One advantage of SMDs are their small size, with a huge range of sizes, you can make the circuit as small as the components and design lets, allowing it to be very compact and pocketable. You can also put lots of them together since they are so tiny. They are also faster to solder as there is a method thsat allows you to be able to solder them in a flash, saving lots of time.</p>
+    <p>For this elective we will be using the 1206 size.</p>
+    
+    <img src="images/SMD.png" width = "200" />
+    <img src="images/SMDsizes.png" height = "300" />
+    
+
+    <h3>Soldering techniques</h3>
+<p>Now we can teach some basic soldering techniques, for THT components it is as shown below, bend the legs, place your soldering iron onto the hole and the leg to heat it up, and then put the solder on it, let the solder completely flow down so as to not prevent any cold joints, and make sure to not put so much to the point of having a large glob.</p>
+    <img src="images/THTsolder.png" width = "200" />
+    
+<p>Now for SMD components, there are 2 common methods, the first is to use a soldering iron, before soldering SMD components. make sure your soldering iron has a fine pointed tip, this will help greatly for your soldering, since the components are so small.</p>
+    <img src="images/soldertip.png" width = "200" />
+    
+<p>And since we are soldering small parts, it is recommended to get a microscope for soldering these, you do not need to buy expensive microscopes. just a USB powered one will work, and you can use your laptop as your display screen.</p>
+<p>First we use a pair of tweezers to hold the component, then we solder one of the ends onto the pads, and once that is done, you can just solder the other side.</p>
+    
+<p>Another method we can use is by using the hot air gun, first we put some solder paste onto the pads, then place the components, next we use a hot air gun and heat it up, the heat will melt the paste and solder the component onto the board.</p>
+    <img src="images/hot%20air.png" width = "200" />
+    <img src="images/paste.png" width = "400" />
+    
+<p>One useful soldering tool is solder flux, solder flux is applied before heating the pads and holes, it is used to clean the oxidized layer for solder to be able to stick better.</p>
+    <img src="images/flux.png" width = "200" />
+    
+    
+<p>If you want a demonstration of soldering these, I have a video I recommend at the bottom that teaches how to solder.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VxMV6wGS3NY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+<h3>Desoldering</h3>
+    <p>If you wish to remove a component for whatever reason, you will need to know how to desolder, desoldering have multiple methods such as:</p>
+    <ul>
+        <li>Desoldering pump</li>
+        <li>using desoldering braid</li>
+        <li>Using a hot air station</li>
+        <li>Using gravty to let the component fall out</li>
+    </ul>
+<p>Here is a video of using some methods of desoldering.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N_dvf45hN6Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
      </div>
 </div>
