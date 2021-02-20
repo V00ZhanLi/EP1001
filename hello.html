@@ -42,19 +42,37 @@
 <p>now we enter into the schematic page, where we can start putting in the components, one thing to take note to make sure to FREQUENTLY SAVE YOUR PROGRESS, this is so you can always start from where you have stopped in case of any sudden disconnection from the software.</p>
     <img src="images/schematicpage.png" width = "590" />
 <p>Now we can start designing, first we go to the add parts command, and search for our components.</p>
-    
-<P>Now we got the components, we can connect them together to complete the circuit, there are 2 ways you can connect the components. the first way is the traditional click and connect, the second is to name the create shortr wires and give them names, once you give them names, EAGLES will ask if you want to connect the two together, and you can just click yes and finish.</P>
-    
-    <p>After connectiing components, naming and giving values for your resistors, capacitor, and LED, you can use the ERC function to check if you missed anything.</p>
-    
-<p>Now once it is connected, switch it from schematic to boaard, this will now give you the function to design the baord now. Now in board, we can arrange the components and deal with the rats nest you are going to get at first, it is important to ensure that there are as little intersections as possible, so later routing the traces will be easier.</p>
-    
+    <img src="images/hello%20(1).png" width = "590" />
+<p>We are going to follow the schematic as shown:</p>
+    <img src="images/helloschematic.png" width = "590" />
+<p>Now we first add a frame and after pressing ok, you can drag it around and click to put it in place, make sure the lower left of the frame is on the +.</p>
+    <img src="images/hello%20(2).png" width = "590" />
+<p>Then we search for our component, the first one will be the controller, which is the attiny45(85).</p>
+    <img src="images/hello%20(3).png" width = "590" />
+<p>And now we look for the isp header pins.</p>
+    <img src="images/hello%20(4).png" width = "590" />
+<p>Now just search for the other components in the downloaded library, such as the resistor, capacitor, LED, button and other header pins, make sure for the LED, resistor and capacitor have 1206 fab at the end of their description, this is the correct size for the parts.</p>
+<P>Now we got the components, we can connect them together to complete the circuit, there are 2 ways you can connect the components. the first way is the traditional click and connect with the net function, the second is to name the create short wires and give them names, once you give them names, EAGLES will ask if you want to connect the two together, and you can just click yes and finish.</P>
+    <img src="images/hello%20(5).png" width = "590" />
+    <img src="images/hello%20(6).png" width = "590" />
+    <img src="images/hello%20(7).png" width = "590" />
+<p>After connectiing components, naming and giving values for your resistors, capacitor, and LED, you can use the ERC function to check if you missed anything.</p>
+    <img src="images/hello.png" width = "590" />
+<p>Now once it is connected, switch it from schematic to board, this will now give you the function to design the baord now. Now in board, we can arrange the components and deal with the rats nest you are going to get at first, it is important to ensure that there are as little intersections as possible, so later routing the traces will be easier.</p>
 <p>Now you can go to DRC and adjust some values, they are shown below:</p>
-    
-<p>After setting the values, you can use DRC to check for any design flaws and when there isn't, you can start generating the gcode.</p>
+    <img src="images/drc%20(1).png" width = "590" />
+    <img src="images/drc%20(2).png" width = "590" />
+<p>After setting the values, click on check to see if there is any design flaws and when there isn't, you can start generating the gcode.</p>
     
 <p>There are 2 ways to generate the gcode, the first way is using EAGLES to generate, the second is to save the design as PNG and use mods to generate. I am going to use mods to generate the code as it is a lot simpler and easier for me to do, but our lecturer has given us an advice, if we are using EAGLES to design, we should use EAGLES for everything.</p>
 <p>To save the schematic as PNG, we need to first export it as an image and set the DPI to 1000, then we also need it to be monocolour so it will be black and white. We will need to save 2 files, one for the traces and one for the outline.</p>
+    <img src="images/export%20(1).png" width = "590" />
+    <img src="images/export%20(2).png" width = "590" />
+    <p>The png files are here:</p>
+    <ul>
+        <li><a href="images/85hello%20traces.png">traces</a></li>
+        <li><a href="images/85hello%20outline.png">outline</a></li>
+    </ul>
 <p>After saving the files, go to mods and create the .nc code, then we use the stepcraft machine to cut it out, and solder the components.</p>
 <p>The finished board should look something like this:</p>
   <img src="images/85hello.png" width = "300" />

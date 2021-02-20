@@ -62,17 +62,20 @@
     </br>Female pin header</p>
 <p>Other miscellanious stuff include IC holders, copper board for PCB.</p>
 <p>First we need to design the PCB in EAGLES, I realised that there isnt some components are not available in the default library, so I need to download some libraries before we deisign, I installed 2 libraries, one for the coin cell battery holder, the other is the bourns potentiometer library.</p>
-<p>After installing them, we can start deisgning the board, first we did the schematic, then convert it to board and we can start to place the componennts.</p>
+<img src="images/libraryadd.png" width = "590" />
+<p>After installing them, we can start deisgning the board, first we did the schematic, then convert it to board and we can start to place the components.</p>
+<img src="images/finalschemtatic.png" width = "590" />
 <p>Just like how I deisgned my hello board, I converted it to board and start to place the components.</p>
 <p>Now I can start to generate the gcode and cut the board.</p>
 <img src="images/finalboard.png" width = "590" />
 <p>For cutting the board, I will be using 0.4mm for the traces, 0.9 for the holes, and 0.8 for the outline. Iwill need to change the collar before being able to put the 0.4mm bit there.</p>
 
-
 <p>After cutting, this is how the board look like, the holes did not cut all the way through so I need to use a pin vise to drill through.</p>
-
+<img src="images/finalcut.png" width = "590" />
 <p>Now we can start to solder the parts, and then we can start to attach the components and IC.</p>
-
+<img src="images/boardfront.png" width = "590" />
+<img src="images/boardback.png" width = "590" />
+<p>Now we need to program the attiny85, I use this page for the tutorial on how to wire everything up:<a href="https://create.arduino.cc/projecthub/arjun/programming-attiny85-with-arduino-uno-afb829?ref=search&ref_id=attiny85&offset=5">attiny85 tutorial</a></p>
 <p>For the IC, I will be using arduino as an ISP programmer to program it. first under examples, I need to upload the artduinoisp code, then I need to wire up the arduino and the attiny85. remember to set arduino as ISP before uploaing the code onto the attiny.</p>
 <img src="images/arduinoisp.png" width = "450" />
 <p>Then I need to burn the bootloader so it can run on 8MHz instead of the default 1MHz, just click on burn bootloader.</p>
@@ -80,9 +83,7 @@
 <p>After burning the bootloader is finished, I upload the code.</p>
 <p>Now you should be able to put the attiny85 chip into the board and use a coin cell battery to power it, plug in the screen and there you have it.</p>
 <p>Now you can see a demo of how it looks like.</p>
-
-<p>youtube video here</p>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/scZwhOWAmFI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Now I gonna go 3d print the buttons and knob for the potentiometer and button, as well as the holder for the display screen to hold it upright.</p>
 <iframe src="https://myhub.autodesk360.com/ue2c03d16/shares/public/SH56a43QTfd62c1cd968838ccd0b2b6fd979?mode=embed" width="590" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 
@@ -105,6 +106,7 @@
     <li>During my playtesting, I realised sometimes the whole thing did not work properly, and as such I need to check everything and see if it is ok. For example, one time it keeps restarting itself or the screen was super dim, and I will need to go fix all these issues, was to just change the coin batery.</li>
 </ol>
 <p>In the end I managed to finish it and this module has come to an end. Now for the last module to get that cert.</p>
+<p><a href="images/Final%20Project%20Files.zip" download>Click here for final project files</a></p>
       
     
     
