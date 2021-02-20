@@ -48,7 +48,63 @@
     <iframe width="560" height="315" src="https://www.youtube.com/embed/ddHbItTluKU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>And that is all about the inspiration, now we can get onto the project.</p>
     
+<p>First for the game console, I need to plan out the things we need to do and create, the first thing is to gather the components and test out how the game is going to be play. </p>
     
+<p>The components we need are:
+    </br>Attiny85 IC
+    </br>SSD1306 display screen with I2C interface
+    </br>push button
+    </br>10K potentiometer
+    </br>resistor (10k)
+    </br>coin cell battery (2032)
+    </br>buzzer
+    </br>coin cell battery holder
+    </br>Female pin header</p>
+<p>Other miscellanious stuff include IC holders, copper board for PCB.</p>
+<p>First we need to design the PCB in EAGLES, I realised that there isnt some components are not available in the default library, so I need to download some libraries before we deisign, I installed 2 libraries, one for the coin cell battery holder, the other is the bourns potentiometer library.</p>
+<p>After installing them, we can start deisgning the board, first we did the schematic, then convert it to board and we can start to place the componennts.</p>
+<p>Just like how I deisgned my hello board, I converted it to board and start to place the components.</p>
+<p>Now I can start to generate the gcode and cut the board.</p>
+<img src="images/finalboard.png" width = "590" />
+<p>For cutting the board, I will be using 0.4mm for the traces, 0.9 for the holes, and 0.8 for the outline. Iwill need to change the collar before being able to put the 0.4mm bit there.</p>
+
+
+<p>After cutting, this is how the board look like, the holes did not cut all the way through so I need to use a pin vise to drill through.</p>
+
+<p>Now we can start to solder the parts, and then we can start to attach the components and IC.</p>
+
+<p>For the IC, I will be using arduino as an ISP programmer to program it. first under examples, I need to upload the artduinoisp code, then I need to wire up the arduino and the attiny85. remember to set arduino as ISP before uploaing the code onto the attiny.</p>
+<img src="images/arduinoisp.png" width = "450" />
+<p>Then I need to burn the bootloader so it can run on 8MHz instead of the default 1MHz, just click on burn bootloader.</p>
+<img src="images/bootloader%20settings.png" width = "450" />
+<p>After burning the bootloader is finished, I upload the code.</p>
+<p>Now you should be able to put the attiny85 chip into the board and use a coin cell battery to power it, plug in the screen and there you have it.</p>
+<p>Now you can see a demo of how it looks like.</p>
+
+<p>youtube video here</p>
+
+<p>Now I gonna go 3d print the buttons and knob for the potentiometer and button, as well as the holder for the display screen to hold it upright.</p>
+<iframe src="https://myhub.autodesk360.com/ue2c03d16/shares/public/SH56a43QTfd62c1cd968838ccd0b2b6fd979?mode=embed" width="590" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+<p>After 3D printing I will need to start to cnc the enclosure for it, I designed the enclosure and generated the toolpath for it. And I proceed to cut it.</p>
+
+<p>After cutting, as always, the cnc parts are always a but furry, so I need to sand them down.</p>
+<img src="images/finalcnc.png" width = "450" />
+<p>To assemble the product, I first glued the supports for the screen, after that was dried, I attacfh the screen on, then I screw on the screws, standoffs and the PCB and then fitted the pieces all in.</p>
+<img src="images/gluestand.png" width = "450" />
+<img src="images/assemble.png" width = "450" />
+<p>Product is finally finished and now I can show a demo of how this product works</p>
+<p>youtube video here</p>
+<p>Somethings that can be improved on and challenges faced:</p>
+<ol>
+    <li>One thing I can improve on for my PCB is to add a on/off switch, this way I won't have to remove the battery every time I off it and I could just flip a switch.</li>
+    <li>Probably i need to think about an outer enclosure earlier or at least not so late so I can immediaely just go cut it.</li>
+    <li>One challenge I faced is trying to design the PCB as small and compact as possible, as the PCB provided is not that big, trying to fit every thing in is a bit of a challenge to route the traces.</li>
+    <li>Another challenge is the failures I have for my PCB, lots of my PCB have different issues i.e. not cutting through, didn't zero properly, some components placed wrongly. And from all these I will need to learn and quickly fix.</li>
+    <img src="images/failedboard.png" width = "500" />
+    <li>During my playtesting, I realised sometimes the whole thing did not work properly, and as such I need to check everything and see if it is ok. For example, one time it keeps restarting itself or the screen was super dim, and I will need to go fix all these issues, was to just change the coin batery.</li>
+</ol>
+<p>In the end I managed to finish it and this module has come to an end. Now for the last module to get that cert.</p>
       
     
     

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>about me</title>
+    <title>CNC</title>
     <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
     <div id="container">
         <div id="header">
-            <h1>About me</h1>
+            <h1>CNC</h1>
         </div>
         <div id="contents">
             <div id="nav">
@@ -16,7 +16,7 @@
                     <li><a class="selected"href="index.html">home</a>
                     </li>
                     <li><a href="progress.html">progress</a></li>
-                    <li><a href="finalproject.html">final project</a></li>
+                    <li><a href="final%20project.html">final project</a></li>
                     <li><a href="fablab safety.html">fablab safety</a></li>
                     <li><a href="about.html">about</a></li>
                     <li><a href="contact.html">contacts</a></li>
@@ -24,15 +24,43 @@
 </div>
             
 <div id="main">
-    <h2>Quick introduction of myself</h2>
-<p>first start by right clicking on to get new component, and make sure it is activated, this will be the first part of the cnc product to sketch.</p>
-<p>start sketch and write the lengths wanted, the lengths I wrote were 600x400 mm, this will be plenty big for me to use.</p>
-<p>after clicking to confirm the parameters, extrude it to the item that is going to be cut's height.</p>
-<p>After doing so, go to change parameters and name the lengths created, this way, it will be easier to know which length is for which part and you can adjust it when needed.</p>
-<p>after all this is done, create another new component to start the sketch again, this time, it will be the sides, before sketching, make sure your component is correct by making sure you activated the correct component.</p>
-<p>now for the sides, the dimensions will be 600x450, so like just now, start a new sketch, write out the parameters.</p>
-<p>make sure to extrude it the same as the base.</p>
-
+    <h2>Big CNC project</h2>
+<p>In this part I will go through how I do my big CNC project.</p>
+<p>For this I will be making a table/high stool, the reason why I want to make this is because I want to have a small table to put some stuff on it, like a small PC or my water bottle because my table I am using now is really small, and it doesn't have the space to fit everything properly.</p>
+<p>So now I will start the design of the table.</p>
+<p>First I will be using fusion 360 and sketching out a circle.</p>
+    <img src="images/cnc.png" width = "590" />
+<p>After drawing out the circle, I extrude it by 18m, because the wood I am using is 18mm thick.</p>
+    <img src="images/cnc1.png" width = "590" />
+<p>Next we will need to sktech at the side of the top, I will be making it 45cm high, so I will draw a 45 cm line verically first, then drawing a line horizontally at the bottom.</p>
+    <img src="images/cnc2.png" width = "590" />
+<p>Afterwards, I draw out the legs and the legs' tabs to be able to connect to the top.</p>
+    <img src="images/cnc5.png" width = "590" />
+<p>Then I extruded the sketch symmetrically to a thickness of 18mm.</p>
+    <img src="images/cnc6.png" width = "590" />
+<p>Now I can just copy and paste the same leg and I now have the second leg, easy. I then just move it down to align the legs.</p>
+    <img src="images/cnc7.png" width = "590" />
+    <img src="images/cnc8.png" width = "590" />
+<p>Now I sketch out the slots for the legs to connect to the top and remove it.</p>
+    <img src="images/cnc9.png" width = "590" />
+    <img src="images/cnc10.png" width = "590" />
+    <img src="images/cnc11.png" width = "590" />
+<p>Then we just save the parts' sketches and export the sketches as DXF and now we can go use vcarve to generate the toolpath.</p>
+    <img src="images/cnc12.png" width = "590" />
+<p>Now in vcarve, you can generate the toolpath for it to cut out, how deep it must go and generate multiple paths, and also you add dog ears on the corners to ensure that it can cut all the way in.</p>
+    <img src="images/vcarve.png" width = "590" />
+<p>And we can finally use the machine, the CNC machine is very large and dangerous, so it is important that when operating the machine, you need at least 2 people to watch it.</p>
+<p>First if we want to change the wood on the bed, we will need to drill them down to ensure that it stays put.</p>
+<p>And to control the machine, we use the controller magnetically attached onto the machine.</p>
+<p>Just like the stepcraft machine, we will need to zero the axises and use a probe to set the z-axis. And dont forget to turn on the extractor.</p>
+<p>Now we can start the machine to cut the parts out.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/aybpuNKMb3o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>After cutting out the parts, we will need to push the parts out because when generating the toolpath, we created tabs to secure it in place, we will need to unscrew the board to push them out.</p>
+<p>As you can see, the parts now are super furry, and has a lot of uneven areas, for that we will need to use a sander to sand the edges smooth.</p>
+    <img src="images/cncsand.png" width = "590" />
+<p>Then we can test fit the parts and it works! Alright, we finished.</p>
+    <img src="images/cncfin.png" width = "590" />
+<p>Looking at the finished product, what could be improved will be the offset of the chair leg, the jutting tabs from the legs, and the width of the slots, with all these improvements, it will look many times better and more like it was made by an expert.</p>
 
      </div>
 </div>
@@ -42,3 +70,4 @@
         </div>
     </body>
 </html>
+
