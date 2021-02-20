@@ -7,7 +7,7 @@
 <body>
     <div id="container">
         <div id="header">
-            <h1>generating files from mods and soldering</h1>
+            <h1>generating files for PCB milling and soldering</h1>
         </div>
         <div id="contents">
             <div id="nav">
@@ -46,6 +46,21 @@
 <p>these allow you to view the files and show simulations of the process of cutting the boards.</p>
 <p>When everything is checked and ok to go, you can save it in a thumbdrive and we can go proceed to use the stepcraft software to cut.</p>
     
+<h3>Generating files using EAGLES ulps</h3>
+    <p>Now in this part, i will be showing the steps for generating the files using the ulps in EAGLES.</p>
+    <p>First we need to instal the ulps made for EAGLES. The link is here: <a href="https://github.com/McNugget6750/pcb-gcode">gcode generator</a></p>
+    <p>After downloading the zip file, copy the file inside and go to documents->EAGLE->ulps and paste it there.</p>
+    <img src="images/ulps.png" width = "590" />
+    <p>Now the next time you want to generate the gcode from EAGLE, after designing the PCB, click on ulps and search for the directory of where you saved the ulps and select the one with setup in it.</p>
+    <p>If you cannot find it, you probably need to go to options in the control panel and change the directory.</p>
+    <img src="images/ulps1.png" width = "590" />
+    <img src="images/ulps5.png" width = "590" />
+    <p>Now just follow these settings then accept and make board, the generated codes will be in where you saved the original project.</p>
+    <img src="images/ulps2.png" width = "590" />
+    <img src="images/ulps3.png" width = "590" />
+    <p></p>
+    
+    <h3>Using Stepcraft</h3> 
 <p>In the stepcraft software, you can use the many different functions in it, </p>
 <img src="images/software.png" width = "590" />
 <p>On the black area, it is the bed of the CNC machine, and the little circle there is the spindal of the machine, you can control it with the laptop's keyboard, and use page up and down to bring it up and down.</p>
@@ -75,6 +90,7 @@
     
     <img src="images/SMD.png" width = "200" />
     <img src="images/SMDsizes.png" height = "300" />
+    <p></p>
     
 
     <h3>Soldering techniques</h3>
